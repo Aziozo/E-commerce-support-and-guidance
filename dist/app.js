@@ -52,4 +52,11 @@ $(document).ready(function () {
       $('.mouse').removeClass('animate-mouse');
     }, 200);
   }, 3000);
+  $('.country .item').on('click', function (evt) {
+    var target =  $(this).text();
+    $('.country .selected').removeClass('selected');
+    $(this).addClass('selected');
+    $('.contact-box .card .selected').removeClass('selected')
+    $('.contact-box .card').find("."+target).addClass('selected')
+  }); 
 });
