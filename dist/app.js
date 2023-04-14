@@ -59,4 +59,8 @@ $(document).ready(function () {
     $('.contact-box .card .selected').removeClass('selected')
     $('.contact-box .card').find("."+target).addClass('selected')
   }); 
+  $('a[data-modal]').click(function (event) {
+    $(this).modal();
+    return false;
+  });
 });

@@ -359,3 +359,90 @@ body {
   text-transform: uppercase;
   color: #000000;
 }
+
+.jquery-modal {
+  z-index: 50 !important;
+}
+
+.modal {
+  width: 1200px !important;
+  max-width: 1200px !important;
+  border-radius: 18px !important;
+  height: 700px;
+  z-index: 100 !important;
+  padding: 0 !important;
+}
+.modal .modal-container {
+  position: relative;
+  border-radius: 18px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+.modal .modal-container .modal-text {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  margin-left: 495px;
+  max-width: 650px;
+  height: 100%;
+}
+.modal .modal-container .modal-text .modal-button {
+  position: absolute;
+  bottom: 100px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.modal .modal-container .modal-text .modal-button a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  text-transform: uppercase;
+  color: #000000;
+  border: 1px solid #2D292A;
+  border-radius: 18px;
+  width: 200px;
+  height: 50px;
+  transition: all 0.3s ease-in-out;
+}
+.modal .modal-container .modal-text .modal-button a:hover {
+  background-color: #2D292A;
+  color: #fff;
+}
+.modal .modal-container .modal-text h1 {
+  margin-bottom: 45px;
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 10px;
+  text-transform: uppercase;
+  color: #1F2022;
+}
+.modal .modal-container .modal-text p {
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 25px;
+  leading-trim: both;
+  text-edge: cap;
+  color: #000000;
+}
+.modal .modal-container img {
+  width: 100;
+  max-width: 450px;
+  position: absolute;
+  left: 0;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
