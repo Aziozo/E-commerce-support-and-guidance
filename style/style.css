@@ -485,4 +485,7 @@ body {
   .main-container .about-box .main-box__wrapper .main-box__text {
     left: 450px;
   }
+  .footer {
+    font-size: 10px;
+  }
 }
