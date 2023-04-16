@@ -71,4 +71,9 @@ $(document).ready(function () {
       event.preventDefault(); // отменяем действие по умолчанию
       window.open(link); // открываем ссылку в новом окне
     });
+
+  $('#abt').click(function (e) {
+    console.log("abt");
+    gsap.to(window, { duration: 2, scrollTo: '#about' });
+  })
 });
