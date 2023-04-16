@@ -73,11 +73,9 @@ $(document).ready(function () {
     });
 
   $('#abt').click(function (e) {
-    console.log("abt");
     gsap.to(window, { duration: 2, scrollTo: '#about' });
   })
-  $('#cnt').click(function (e) {
-    console.log('abt');
+  $('#cnt').click(function (es) {
     gsap.to(window, { duration: 2, scrollTo: '#contact' });
   });
 });

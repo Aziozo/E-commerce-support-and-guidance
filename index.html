@@ -137,7 +137,7 @@
                 <p>Contact us via email or phone for more information and to take your online selling business to the next level. Our
                 services are available in Ukraine, Turkey, and the USA, where we are based.</p>
                 <div class="modal-button">
-                    <a href="#contact" class="contact-btn">Contact</a>
+                    <a class="contact-btn" style="cursor: pointer;">Contact</a>
                 </div>
             </div>
         </div>
@@ -153,7 +153,7 @@
                     level. Our
                     services are available in Ukraine, Turkey, and the USA, where we are based.</p>
                 <div class="modal-button">
-                    <a href="#contact" class="contact-btn">Contact</a>
+                    <a class="contact-btn" style="cursor: pointer;">Contact</a>
                 </div>
             </div>
         </div>
@@ -163,6 +163,7 @@
 <script>
    $('.contact-btn').on('click', function () {
         $.modal.close();
+        gsap.to(window, { duration: 2, scrollTo: '#contact' });
     });
 </script>
 </body>
