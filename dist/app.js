@@ -73,7 +73,7 @@ $(document).ready(function () {
     });
 
   $('#abt').click(function (e) {
-    gsap.to(window, { duration: 2, scrollTo: '#about' });
+    gsap.to(window, { duration: 1, scrollTo: '#about' });
   })
   $('#cnt').click(function () {
     scrollTween.kill();
