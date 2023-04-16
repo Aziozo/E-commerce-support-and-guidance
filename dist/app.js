@@ -82,6 +82,14 @@ $(document).ready(function () {
       scrollTo: '#contact',
       autoKill: true,
       onComplete: () => (scrollTween = null), });
-    
+  });
+  $('.contact-btn').click(function () {
+    scrollTween.kill();
+    gsap.to(window, {
+      duration: 2,
+      scrollTo: '#contact',
+      autoKill: true,
+      onComplete: () => (scrollTween = null),
+    });
   });
 });
