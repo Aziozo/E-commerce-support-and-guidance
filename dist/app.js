@@ -18,7 +18,7 @@ document.addEventListener(
 
 function goToSection(i) {
   scrollTween = gsap.to(window, {
-    scrollTo: { y: i * innerHeight, autoKill: false },
+    scrollTo: { y: i * innerHeight, autoKill: true },
     onStart: () => {
       observer.disable(); // for touch devices, as soon as we start forcing scroll it should stop any current touch-scrolling, so we just disable() and enable() the normalizeScroll observer
       observer.enable();
@@ -81,15 +81,16 @@ $(document).ready(function () {
       duration: 2,
       scrollTo: '#contact',
       autoKill: true,
-      onComplete: () => (scrollTween = null), });
+      onComplete: scrollTween,
+    });
   });
   $('.contact-btn').click(function () {
-    scrollTween.kill();
+    scrollTween.kill(false);
     gsap.to(window, {
       duration: 2,
       scrollTo: '#contact',
       autoKill: true,
-      onComplete: () => (scrollTween = null),
+      onComplete: scrollTween,
     });
   });
 });
