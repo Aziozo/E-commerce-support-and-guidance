@@ -84,10 +84,10 @@
         </div>
         <img src="./img/Mouse Scrolling.svg" class="mouse">
     </section>
-    <section class="content-box panel contact-box">
+    <section class="content-box panel contact-box" id="contact">
         <div class="main-box__wrapper">
             <div class="main-box__hero">
-                <div class="card" id="contact">
+                <div class="card">
                     <img src="./img/uk.png" class="UKRAINE selected">
                     <img src="./img/tur.png" class="Turkey">
                     <img src="./img/usa.png" class="USA">
@@ -163,7 +163,7 @@
 <script>
    $('.contact-btn').on('click', function () {
         $.modal.close();
-        gsap.to(window, { duration: 2, scrollTo: '#contact' });
+        gsap.to(window, { duration: 1, scrollTo: '#contact' });
     });
 </script>
 </body>
