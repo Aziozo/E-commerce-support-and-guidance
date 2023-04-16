@@ -489,3 +489,6 @@ body {
     font-size: 10px;
   }
 }
+.modals {
+  display: none;
+}

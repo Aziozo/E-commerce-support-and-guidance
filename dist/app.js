@@ -60,7 +60,10 @@ $(document).ready(function () {
     $('.contact-box .card').find("."+target).addClass('selected')
   }); 
   $('a[data-modal]').click(function (event) {
-    $(this).modal();
+    $(this).modal({
+      fadeDuration: 250,
+      fadeDelay: 1.5,
+    });
     return false;
   });
 });

@@ -86,7 +86,7 @@
     <section class="content-box panel contact-box">
         <div class="main-box__wrapper">
             <div class="main-box__hero">
-                <div class="card">
+                <div class="card" id="contact">
                     <img src="./img/uk.png" class="UKRAINE selected">
                     <img src="./img/tur.png" class="Turkey">
                     <img src="./img/usa.png" class="USA">
@@ -124,7 +124,7 @@
     </section>
 </section>
 <div class="modals">
-    <div id="amazon" class="modal">
+    <div id="amazon" class="modals">
         <div class="modal-container">
             <img src="./img/modal/Rectangle 10.png">
             <div class="modal-text">
@@ -136,15 +136,33 @@
                 <p>Contact us via email or phone for more information and to take your online selling business to the next level. Our
                 services are available in Ukraine, Turkey, and the USA, where we are based.</p>
                 <div class="modal-button">
-                    <a href="">Contact</a>
+                    <a href="#contact" class="contact-btn">Contact</a>
                 </div>
             </div>
         </div>
     </div>
-    <div id="eBay" class="modal">
-
+    <div id="ebay" class="modal">
+        <div class="modal-container">
+            <img src="./img/modal/Rectangle 10.png">
+            <div class="modal-text">
+                <h1>ebay</h1>
+                <p>For eBay sellers, we provide consultations on account registration and setup, niche selection, writing persuasive
+                product listings, and external and internal promotion of listings. We also offer virtual assistant services.</p>
+                <p>Contact us via email or phone for more information and to take your online selling business to the next
+                    level. Our
+                    services are available in Ukraine, Turkey, and the USA, where we are based.</p>
+                <div class="modal-button">
+                    <a href="#contact" class="contact-btn">Contact</a>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 <script src="./dist/app.js"></script>
+<script>
+   $('.contact-btn').on('click', function () {
+        $.modal.close();
+    });
+</script>
 </body>
 </html>
