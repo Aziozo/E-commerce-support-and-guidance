@@ -3,6 +3,7 @@ gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 let panels = gsap.utils.toArray('.panel'),
   observer = ScrollTrigger.normalizeScroll(true),
   scrollTween;
+let shouldPause = false;
 
 // on touch devices, ignore touchstart events if there's an in-progress tween so that touch-scrolling doesn't interrupt and make it wonky
 document.addEventListener(
@@ -17,8 +18,11 @@ document.addEventListener(
 );
 
 function goToSection(i) {
+   if (shouldPause) {
+     return; // выходим из функции, если флаг установлен в true
+   }
   scrollTween = gsap.to(window, {
-    scrollTo: { y: i * innerHeight, autoKill: true },
+    scrollTo: { y: i * innerHeight, autoKill: false },
     onStart: () => {
       observer.disable(); // for touch devices, as soon as we start forcing scroll it should stop any current touch-scrolling, so we just disable() and enable() the normalizeScroll observer
       observer.enable();
@@ -44,8 +48,35 @@ ScrollTrigger.create({
   end: 'max',
   snap: 1 / (panels.length - 1),
 });
-
+var heg = $(window).height();
+ $('#abt').click(function () {
+    gsap.to(window, { duration: 1, scrollTo: { y: heg } });
+    console.log('Высота экрана: ' + heg);
+  })
+  $('#cnt').click(function () {
+   gsap.to(window, {
+      duration: 2,
+      scrollTo: { y: heg * 100 },
+      onComplete: () => {
+        shouldPause = false;
+        console.log('Высотa');
+      },
+    });
+  });
+  $('.contact-btn').click(function () {
+    $.modal.close();
+    shouldPause = true;
+    gsap.to(window, {
+      duration: 2,
+      scrollTo: { y: heg * 100 },
+      onComplete: () => {
+        shouldPause = false;
+        console.log('Высотa');
+      },
+    });
+  });
 $(document).ready(function () {
+  let heg = $(window).height();
   setInterval(function () {
     $('.mouse').addClass('animate-mouse');
     setTimeout(function () {
@@ -71,26 +102,4 @@ $(document).ready(function () {
       event.preventDefault(); // отменяем действие по умолчанию
       window.open(link); // открываем ссылку в новом окне
     });
-
-  $('#abt').click(function (e) {
-    gsap.to(window, { duration: 1, scrollTo: '#about' });
-  })
-  $('#cnt').click(function () {
-    scrollTween.kill();
-    gsap.to(window, {
-      duration: 2,
-      scrollTo: '#contact',
-      autoKill: true,
-      onComplete: scrollTween,
-    });
-  });
-  $('.contact-btn').click(function () {
-    scrollTween.kill(false);
-    gsap.to(window, {
-      duration: 2,
-      scrollTo: '#contact',
-      autoKill: true,
-      onComplete: scrollTween,
-    });
-  });
 });
