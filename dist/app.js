@@ -49,32 +49,7 @@ ScrollTrigger.create({
   snap: 1 / (panels.length - 1),
 });
 var heg = $(window).height();
- $('#abt').click(function () {
-    gsap.to(window, { duration: 1, scrollTo: { y: heg } });
-    console.log('Высота экрана: ' + heg);
-  })
-  $('#cnt').click(function () {
-   gsap.to(window, {
-      duration: 2,
-      scrollTo: { y: heg * 100 },
-      onComplete: () => {
-        shouldPause = false;
-        console.log('Высотa');
-      },
-    });
-  });
-  $('.contact-btn').click(function () {
-    $.modal.close();
-    shouldPause = true;
-    gsap.to(window, {
-      duration: 2,
-      scrollTo: { y: heg * 100 },
-      onComplete: () => {
-        shouldPause = false;
-        console.log('Высотa');
-      },
-    });
-  });
+
 $(document).ready(function () {
   let heg = $(window).height();
   setInterval(function () {
@@ -102,4 +77,24 @@ $(document).ready(function () {
       event.preventDefault(); // отменяем действие по умолчанию
       window.open(link); // открываем ссылку в новом окне
     });
+  $('#abt').click(function () {
+  gsap.to(window, { duration: 1, scrollTo: { y: heg } });
+  });
+  $('#cnt').click(function () {
+    gsap.to(window, {
+      duration: 2,
+      scrollTo: { y: heg * 200 },
+    });
+  });
+  $('.contact-btn').click(function () {
+    $.modal.close();
+    shouldPause = true;
+    gsap.to(window, {
+      duration: 2,
+      scrollTo: { y: heg * 200 },
+      onComplete: () => {
+        shouldPause = false;
+      },
+    });
+  });
 });
