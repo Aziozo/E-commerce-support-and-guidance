@@ -76,7 +76,7 @@ $(document).ready(function () {
     gsap.to(window, { duration: 1, scrollTo: '#about' });
   })
   $('#cnt').click(function () {
-    scrollTween.kill();
+    ScrollTrigger.killAll();
     gsap.to(window, { duration: 2, scrollTo: '#contact', autoKill: true });
     
   });
