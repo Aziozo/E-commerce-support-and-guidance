@@ -66,4 +66,9 @@ $(document).ready(function () {
     });
     return false;
   });
+  var link = 'https://www.facebook.com/profile.php?id=100008823150711';
+  $('.fblink').click(function (event) {
+      event.preventDefault(); // отменяем действие по умолчанию
+      window.open(link); // открываем ссылку в новом окне
+    });
 });
